@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Academia Pitágoras · Refuerzo escolar en Rubí</title>
+<meta name="description" content="Centro de aprendizaje y refuerzo de estudios en Rubí: Primaria, ESO, Bachillerato, Ciclos y Selectividad. Plan de estudio personalizado, tutor y seguimiento con las familias. C/ Sant Sebastià, 45.">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=gambetta@400,500,600,401&f[]=supreme@400,500,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbfbf8; --grid:#dfe7f1; --ink:#14213d; --ink-2:#55607a; --blue:#2453a6; --red:#d1242f; --pencil:#f2c230; --line:#d8dde6;
+  --serif:"Gambetta",Georgia,serif; --sans:"Supreme",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace; --hand:"Nothing You Could Do",cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+@media(max-width:600px){.wrap{padding:0 18px}}
+.mono{font:500 12px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+
+/* barra de datos: lo práctico siempre a mano */
+.top{border-bottom:1px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:5}
+.top__in{display:flex;align-items:center;gap:22px;height:62px}
+.brand{font:600 21px/1 var(--serif);text-decoration:none;display:flex;align-items:center;gap:10px;margin-right:auto}
+.brand svg{width:26px;height:26px}
+.top .mono{color:var(--ink-2)}
+.top .call{font:500 13px/1 var(--mono);text-decoration:none;border:1px solid var(--ink);padding:10px 12px}
+.top .wa{background:var(--ink);color:var(--paper)}
+@media(max-width:860px){.top .hide{display:none}}
+@media(max-width:480px){.top .call:not(.wa){display:none}}
+
+/* portada: la fórmula (pieza: dibujo técnico en línea azul y columnas editoriales de "Making Software", httpster) */
+.hero{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px;border-bottom:1px solid var(--ink)}
+.hero__in{padding:56px 32px 64px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.hero__row{margin-top:34px;display:grid;grid-template-columns:1fr 1.1fr auto;gap:40px;align-items:end;border-top:1px solid var(--ink);padding-top:26px}
+.hero__act{display:grid;gap:14px;justify-items:start}
+.link{font:500 14px var(--mono);text-decoration:none;border-bottom:1px solid currentColor}
+.hero__label{color:var(--blue)}
+.formula{font:400 clamp(44px,8.2vw,128px)/1 var(--serif);letter-spacing:-.025em}
+.formula i{font-style:italic}
+.formula sup{font-size:.45em;vertical-align:.95em;margin-left:.04em;color:var(--blue)}
+.formula .eq{color:var(--blue)}
+.formula .res{position:relative;white-space:nowrap}
+.formula .res::after{content:"";position:absolute;left:-2%;right:-4%;bottom:.04em;height:.14em;background:var(--pencil);z-index:-1;transform:skewX(-8deg)}
+.hero__lead{max-width:40ch;font-size:18px;color:var(--ink-2)}
+.hero__lead b{color:var(--ink);font-weight:500}
+.cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;font:500 16px/1 var(--sans);text-decoration:none;padding:16px 20px;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);transition:transform .15s}
+.btn:active{transform:translateY(1px)}
+.btn--ghost{background:transparent;color:var(--ink)}
+.tri{position:relative}
+.tri svg{width:100%;height:auto;max-height:230px}
+.tri path,.tri line{fill:none;stroke:var(--blue);stroke-width:1.4}
+.tri .sq{fill:rgba(36,83,166,.06)}
+.tri text{font:500 12px var(--mono);fill:var(--blue);letter-spacing:.04em}
+.tri .hand{font:400 22px var(--hand);fill:var(--red);letter-spacing:0}
+.draw{stroke-dasharray:1200;stroke-dashoffset:1200;animation:draw 2.2s .3s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media(max-width:980px){.hero__in{padding:40px 18px 52px}.hero__row{grid-template-columns:1fr;gap:26px}.tri{max-width:380px}}
+
+/* cita de Sara con letra capital */
+.manifesto{border-bottom:1px solid var(--ink)}
+.manifesto__in{display:grid;grid-template-columns:220px 1fr;gap:40px;padding:72px 32px}
+.manifesto blockquote{font:400 clamp(26px,2.8vw,38px)/1.25 var(--serif);max-width:30ch}
+.manifesto blockquote::first-letter{float:left;font-size:3.2em;line-height:.8;margin:.06em .08em 0 0;color:var(--blue)}
+.manifesto cite{display:block;margin-top:18px;font:500 13px/1 var(--mono);font-style:normal;color:var(--ink-2);letter-spacing:.06em;text-transform:uppercase}
+.manifesto p{margin-top:24px;max-width:58ch;color:var(--ink-2)}
+@media(max-width:760px){.manifesto__in{grid-template-columns:1fr;gap:14px;padding:52px 18px}}
+
+/* nivel: regla con marcas */
+.levels{padding:88px 0;border-bottom:1px solid var(--ink)}
+.h2{font:400 clamp(34px,4vw,54px)/1.05 var(--serif);letter-spacing:-.015em}
+.h2 i{font-style:italic}
+.ruler{margin-top:40px;display:grid;grid-template-columns:repeat(5,1fr);border-top:2px solid var(--ink);position:relative}
+.ruler button{appearance:none;background:none;border:0;border-left:1px solid var(--ink);text-align:left;padding:14px 12px 16px;cursor:pointer;font:500 18px/1.1 var(--serif);color:var(--ink-2);position:relative;transition:color .2s,background .2s}
+.ruler button:first-child{border-left:0}
+.ruler button::before{content:"";position:absolute;left:-1px;top:-2px;width:1px;height:14px;background:var(--ink)}
+.ruler button small{display:block;margin-top:6px;font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.ruler button[aria-pressed="true"]{color:var(--ink);background:#eef2f9}
+.ruler button[aria-pressed="true"]::after{content:"";position:absolute;left:0;right:0;top:-2px;height:4px;background:var(--blue)}
+.panel{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding-top:36px}
+.panel h3{font:400 30px/1.1 var(--serif)}
+.panel ul{list-style:none;margin-top:16px;display:grid;gap:10px}
+.panel li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start}
+.panel li svg{width:18px;height:18px;margin-top:5px}
+.panel li path{fill:none;stroke:var(--red);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.panel .side{border-left:1px solid var(--line);padding-left:32px;color:var(--ink-2)}
+.panel .side .btn{margin-top:22px}
+@media(max-width:760px){.ruler{grid-template-columns:1fr 1fr}.ruler button{border-bottom:1px solid var(--line)}.panel{grid-template-columns:1fr;gap:26px}.panel .side{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:22px}}
+
+/* método: enunciados de examen */
+.method{padding:88px 0;border-bottom:1px solid var(--ink);background:#fff}
+.ex{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
+.ex article{padding:22px 22px 26px 0;border-right:1px solid var(--line);margin-right:22px;position:relative}
+.ex article:last-child{border-right:0;margin-right:0}
+.ex .mono{color:var(--blue)}
+.ex h3{margin-top:12px;font:500 22px/1.15 var(--serif)}
+.ex p{margin-top:10px;font-size:15.5px;color:var(--ink-2)}
+.ex .tick{position:absolute;top:14px;right:26px;width:34px;height:28px;opacity:0;transition:opacity .2s}
+.ex .tick path{fill:none;stroke:var(--red);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60;stroke-dashoffset:60;transition:stroke-dashoffset .45s cubic-bezier(.6,0,.2,1)}
+.ex article:hover .tick{opacity:1}
+.ex article:hover .tick path{stroke-dashoffset:0}
+@media(max-width:900px){.ex{grid-template-columns:1fr 1fr}.ex article{border-right:0;margin-right:0;border-bottom:1px solid var(--line);padding-right:0}}
+@media(max-width:560px){.ex{grid-template-columns:1fr}}
+
+/* familias: corrección en rojo */
+.voices{padding:88px 0;border-bottom:1px solid var(--ink)}
+.voices__head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.grade{font:400 34px/1 var(--hand);color:var(--red);transform:rotate(-6deg);display:inline-block;border:2px solid var(--red);border-radius:50%;padding:14px 16px 10px}
+.quotes{margin-top:40px;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:0;border-top:1px solid var(--ink)}
+.quotes figure{padding:26px 26px 26px 0;margin-right:26px;border-right:1px solid var(--line)}
+.quotes figure:last-child{border-right:0;margin-right:0}
+.quotes blockquote{font:400 21px/1.35 var(--serif)}
+.quotes figure:first-child blockquote{font-size:27px}
+.quotes figcaption{margin-top:16px;font:500 12px/1.4 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+.quotes .note{display:block;margin-top:8px;font:400 19px/1 var(--hand);color:var(--red);text-transform:none;letter-spacing:0}
+@media(max-width:900px){.quotes{grid-template-columns:1fr}.quotes figure{border-right:0;margin-right:0;border-bottom:1px solid var(--line);padding-right:0}}
+
+/* horario (pieza: tabla de horario tipo "schedule", refero) */
+.visit{padding:88px 0}
+.visit__in{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+table{width:100%;border-collapse:collapse;margin-top:28px;font-size:16px}
+th,td{text-align:left;padding:12px 0;border-bottom:1px solid var(--line)}
+th{font:500 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);font-weight:500}
+td:last-child{text-align:right;font-family:var(--mono);font-size:15px}
+tr.today td{color:var(--blue);font-weight:500}
+tr.closed td:last-child{color:var(--ink-2)}
+.addr{margin-top:28px;font:400 26px/1.2 var(--serif)}
+.contact{margin-top:22px;display:grid;gap:10px}
+.contact a{font:500 16px var(--mono);text-decoration:none;display:flex;justify-content:space-between;border-bottom:1px solid var(--ink);padding:12px 0}
+.contact a:hover{color:var(--blue)}
+@media(max-width:800px){.visit__in{grid-template-columns:1fr;gap:40px}}
+
+footer{border-top:1px solid var(--ink);padding:26px 0 40px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--ink-2)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.draw{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="brand" href="#"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M3 23 L23 23 L3 5 Z" fill="none" stroke="#2453a6" stroke-width="1.6"/><rect x="3" y="19" width="4" height="4" fill="none" stroke="#2453a6" stroke-width="1.2"/></svg>Pitágoras</a>
+    <span class="mono hide">Rubí · C/ Sant Sebastià, 45</span>
+    <span class="mono hide">L–J 16–20 h · V 16–19 h</span>
+    <a class="call" href="tel:+34722111023">722 11 10 23</a>
+    <a class="call wa" href="https://wa.me/34722111023?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20el%20refuerzo%20escolar." target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero__in">
+    <h1 class="formula"><span class="sr">Academia Pitágoras, refuerzo escolar en Rubí: </span><i>esfuerzo</i><sup>2</sup> + <i>constancia</i><sup>2</sup> <span class="eq">=</span> <span class="res">aprobado</span><sup>2</sup></h1>
+    <div class="hero__row">
+      <p class="hero__lead">Clases de refuerzo para <b>Primaria, ESO, Bachillerato, Ciclos y Selectividad</b> en Rubí. Cada alumno tiene su plan de estudio, un tutor que le acompaña y una familia que sabe cómo va.</p>
+      <div class="tri" aria-hidden="true">
+        <svg viewBox="0 0 440 330">
+          <path class="sq" d="M30 130 L200 130 L200 300 L30 300 Z"/>
+          <path class="draw" d="M200 300 L420 300 L200 130 Z"/>
+          <path d="M200 282 L218 282 L218 300"/>
+          <text x="330" y="322">b · constancia</text>
+          <text x="115" y="220" text-anchor="middle">a²</text>
+          <text x="186" y="230" transform="rotate(-90 186 230)" text-anchor="middle">a · esfuerzo</text>
+          <text x="318" y="200" transform="rotate(37.7 318 200)" text-anchor="middle">c · aprobado</text>
+          <text class="hand" x="300" y="98">¡muy bien!</text>
+          <path d="M296 108 C 330 122, 372 114, 398 96" stroke="#d1242f" stroke-width="1.6"/>
+        </svg>
+      </div>
+      <div class="hero__act">
+        <a class="btn" href="https://wa.me/34722111023?text=Hola%2C%20me%20gustar%C3%ADa%20concertar%20una%20primera%20visita%20para%20mi%20hijo%2Fa." target="_blank" rel="noopener">Pide una primera visita</a>
+        <a class="link" href="#nivel">Ver por curso ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="manifesto">
+  <div class="manifesto__in">
+    <p class="mono">Nuestra filosofía</p>
+    <div>
+      <blockquote>Un centre on els valors de l'esforç, la constància i la bona convivència són els pilars de la nostra filosofia.</blockquote>
+      <cite>Sara · directora del centro</cite>
+      <p>Para cada alumno preparamos un plan de trabajo personalizado: no solo para aprobar la asignatura que cuesta, también para que coja hábitos de concentración, esfuerzo y constancia que le sirvan el resto del curso.</p>
+    </div>
+  </div>
+</section>
+
+<section class="levels" id="nivel">
+  <div class="wrap">
+    <h2 class="h2">¿En qué curso está?</h2>
+    <div class="ruler" role="group" aria-label="Curso del alumno">
+      <button aria-pressed="true" data-l="0">Primaria<small>6 a 12 años</small></button>
+      <button aria-pressed="false" data-l="1">ESO<small>Paso de etapa</small></button>
+      <button aria-pressed="false" data-l="2">Bachillerato<small>1.º y 2.º</small></button>
+      <button aria-pressed="false" data-l="3">Selectividad<small>PAU</small></button>
+      <button aria-pressed="false" data-l="4">Ciclos<small>Formativos</small></button>
+    </div>
+    <div class="panel" aria-live="polite">
+      <div>
+        <h3 id="lvT"></h3>
+        <ul id="lvL"></ul>
+      </div>
+      <div class="side">
+        <p id="lvS"></p>
+        <a class="btn" id="lvB" href="#" target="_blank" rel="noopener">Pedir información por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="method">
+  <div class="wrap">
+    <h2 class="h2">Así trabajamos con cada alumno.</h2>
+    <div class="ex">
+      <article><svg class="tick" viewBox="0 0 34 28" aria-hidden="true"><path d="M3 15 L12 24 L31 3"/></svg><p class="mono">Ejercicio 1</p><h3>Plan de estudio personalizado</h3><p>Vemos dónde está y qué necesita, y preparamos su plan de trabajo para el curso.</p></article>
+      <article><svg class="tick" viewBox="0 0 34 28" aria-hidden="true"><path d="M3 15 L12 24 L31 3"/></svg><p class="mono">Ejercicio 2</p><h3>Un tutor que le acompaña</h3><p>Siempre tiene a alguien que le ayuda y le sigue en todo el proceso.</p></article>
+      <article><svg class="tick" viewBox="0 0 34 28" aria-hidden="true"><path d="M3 15 L12 24 L31 3"/></svg><p class="mono">Ejercicio 3</p><h3>Técnicas de estudio</h3><p>Aprende a estudiar: concentración, organización y el método que mejor le va.</p></article>
+      <article><svg class="tick" viewBox="0 0 34 28" aria-hidden="true"><path d="M3 15 L12 24 L31 3"/></svg><p class="mono">Ejercicio 4</p><h3>Las familias, informadas</h3><p>Si lo pedís, os contamos cada cierto tiempo cómo avanza para decidir juntos.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="voices">
+  <div class="wrap">
+    <div class="voices__head">
+      <h2 class="h2">Lo que dicen las familias.</h2>
+      <span class="grade" aria-label="5,0 en Google con 24 reseñas">5,0</span>
+    </div>
+    <div class="quotes">
+      <figure><blockquote>Mi hija estuvo yendo varios meses al finalizar la ESO y la experiencia ha sido una maravilla. Un trato genial y los resultados espectaculares.</blockquote><figcaption>Nuria T. · Reseña en Google<span class="note">final de la ESO</span></figcaption></figure>
+      <figure><blockquote>Vine porque necesitaba ayuda con las matemáticas de 2.º de Bachillerato. Profesores muy implicados. Gracias Sara!</blockquote><figcaption>Dani G. · Reseña en Google<span class="note">mates de 2.º BTX</span></figcaption></figure>
+      <figure><blockquote>Empezamos con ellos en el cambio de primaria a la ESO y nos han ayudado muchísimo. Ambiente tranquilo y agradable.</blockquote><figcaption>Isabel L. · Reseña en Google<span class="note">paso a la ESO</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visita">
+  <div class="wrap visit__in">
+    <div>
+      <h2 class="h2">Horario</h2>
+      <table>
+        <thead><tr><th>Día</th><th style="text-align:right">Tardes</th></tr></thead>
+        <tbody id="hours">
+          <tr data-d="1"><td>Lunes</td><td>16:00 – 20:00</td></tr>
+          <tr data-d="2"><td>Martes</td><td>16:00 – 20:00</td></tr>
+          <tr data-d="3"><td>Miércoles</td><td>16:00 – 20:00</td></tr>
+          <tr data-d="4"><td>Jueves</td><td>16:00 – 20:00</td></tr>
+          <tr data-d="5"><td>Viernes</td><td>16:00 – 19:00</td></tr>
+          <tr data-d="6" class="closed"><td>Sábado y domingo</td><td>Cerrado</td></tr>
+        </tbody>
+      </table>
+      <p class="mono" style="margin-top:14px;color:var(--ink-2)">Por la mañana, con cita previa.</p>
+    </div>
+    <div>
+      <h2 class="h2">Ven a vernos</h2>
+      <p class="addr">Carrer de Sant Sebastià, 45 (local)<br>08191 Rubí</p>
+      <div class="contact">
+        <a href="https://wa.me/34722111023?text=Hola%2C%20me%20gustar%C3%ADa%20concertar%20una%20primera%20visita." target="_blank" rel="noopener"><span>WhatsApp</span><span>722 11 10 23 →</span></a>
+        <a href="tel:+34935889098"><span>Teléfono</span><span>935 88 90 98 →</span></a>
+        <a href="https://maps.google.com/?q=Academia+Pit%C3%A1goras+Carrer+de+Sant+Sebasti%C3%A0+45+Rub%C3%AD" target="_blank" rel="noopener"><span>Cómo llegar</span><span>Google Maps ↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>Centre d'Aprenentatge Pitágoras · Rubí</span><span class="mono">C/ Sant Sebastià, 45 · 722 11 10 23</span></div></footer>
+
+<script>
+const L=[
+ {t:"Primaria",l:["Repaso de lengua, matemáticas e inglés","Técnica de lectura y comprensión","Hábitos de estudio desde pequeños"],s:"En primaria lo más importante es coger el hábito: venir, hacer los deberes con alguien al lado y entender lo que se lee."},
+ {t:"ESO",l:["Todas las asignaturas, sobre todo las que más cuestan","Preparación de exámenes y recuperaciones","Organización y técnicas de estudio"],s:"El paso de primaria a la ESO es donde más se nota el cambio. Lo acompañamos desde el primer trimestre."},
+ {t:"Bachillerato",l:["Matemáticas, física, química y lenguas","Preparación de exámenes de cada trimestre","Plan de estudio para llegar bien a 2.º"],s:"En bachillerato las notas cuentan para la selectividad: trabajamos asignatura por asignatura con un plan claro."},
+ {t:"Selectividad",l:["Preparación de la PAU por materias","Exámenes de años anteriores y simulacros","Organización de las semanas antes del examen"],s:"Preparamos la selectividad con tiempo, con exámenes reales y un calendario que no agobie."},
+ {t:"Ciclos formativos",l:["Refuerzo de las asignaturas del ciclo","Preparación de exámenes y recuperaciones","Ayuda con trabajos y proyectos"],s:"También acompañamos a alumnos de ciclos, con el mismo plan personalizado y tutor."}
+];
+const bs=[...document.querySelectorAll('.ruler button')];
+const tick='<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 11 L8 16 L17 4"/></svg>';
+function show(i){
+  bs.forEach((b,k)=>b.setAttribute('aria-pressed',k===i));
+  const x=L[i];
+  document.getElementById('lvT').textContent=x.t;
+  document.getElementById('lvL').innerHTML=x.l.map(v=>`<li>${tick}<span>${v}</span></li>`).join('');
+  document.getElementById('lvS').textContent=x.s;
+  document.getElementById('lvB').href='https://wa.me/34722111023?text='+encodeURIComponent(`Hola, me gustaría información sobre el refuerzo de ${x.t} para mi hijo/a.`);
+}
+bs.forEach((b,i)=>b.addEventListener('click',()=>show(i)));show(0);
+// resalta el día de hoy en el horario
+const d=new Date().getDay();const row=document.querySelector(`#hours tr[data-d="${d===0?6:d}"]`);if(row)row.classList.add('today');
+</script>
+</body>
+</html>
